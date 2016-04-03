@@ -1,0 +1,22 @@
+CSE 190 Write up
+
+1: Bandwidth was measured by sending a character 10000 times over RFChat and measuring the amount of time that passed during the transmission.  The resultant bandwidth was found to be 24.5 Kbps.
+
+2: By comparing the amount of packets transmitted by one board and the amount of characters received by the other board, we were able to determine how many packets were dropped for a given communication session.
+
+3: Since RFChat cannot simultaneously send a package and receive one, the transmitting board cannot receive any data while it's sending a packet.  This means that the time it takes to send packets both ways is approximately double the time one-way communication takes.  We measured the transmission and reception times and then divided by the number of packets transferred to get an average time to send or receive one packet.  The average reception time was 5.7 seconds / 10000 packets.  The average transmission time was 3.3 seconds /10000 packets.  Adding these times together and dividing the sum by 10000 yielded the time to transfer and receive 1 packet one-way.  Taking the reciprocal of this number we can get the bandwidth for two-way communication which was found to be 8.9 Kbps which is about 3 times less than the one-way rate.
+
+4: The drop rate increases gradually for distance between 1 and 18 feet, and then sharply increases at 33ft after which it increases gradually again.
+The average drop rates are tabulated below.
+
+Distance (ft)	Drop Rate
+    1		 0.000167
+    3		 0.000167
+    9		 0.016467
+    18		 0.038867
+    33		 0.4793
+    50		 0.545773
+   100		 0.6872
+   133		 0.73145
+
+Difficulties encountered during this lab included working with the packet size of 1 byte which was found by inspecting RadioFunctions.h, our solution was to send characters as test messages because each character takes up one byte allowing us to evaluate data transfer and drop rate directly.  In order to determine the effect of distance on drop rate, we measured the drop rate at the distances listed above.
