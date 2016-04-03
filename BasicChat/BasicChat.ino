@@ -5,7 +5,6 @@
   date: July 3, 2012
   License: Beerware. Feel free to use, reuse, and modify this code
   as you please. If you find it useful, you can buy me a beer.
-
   This code sets up the ATmega128RFA1's wireless transciever in
   the most basic way possible to serve as a serial gateway.
   Serial into the ATmega128RFA1's UART0 will go out the RF radio.
@@ -26,13 +25,8 @@ void setup()
 
 void loop()
 {
-  
-  if (Serial.available())  // If serial comes in...
-  {
-    rfWrite(Serial.read()); // ...send it out the radio.
-  }
   if (rfAvailable())  // If data receievd on radio...
   {
-    Serial.print(rfRead());  // ... send it out serial.
+    rfWrite('s');
   }
 }
