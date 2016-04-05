@@ -1,6 +1,7 @@
 CSE 190 Write up
 
 1: Bandwidth was measured by sending a character 10000 times over RFChat and measuring the amount of time that passed during the transmission.  The resultant bandwidth was found to be 24.5 Kbps.
+   We then improved our bandwidth by sending a string instead of a single character. By sending 50 strings with 50 characters in each we have found out that this data can be transferred in a rate of ~211 Kbps with a 20% drop ratio.
 
 2: By comparing the amount of packets transmitted by one board and the amount of characters received by the other board, we were able to determine how many packets were dropped for a given communication session.
 

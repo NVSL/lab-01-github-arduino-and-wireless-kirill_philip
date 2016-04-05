@@ -46,7 +46,7 @@ void loop()
         Serial.print("Packets received: ");
         Serial.println(index);
         Serial.print("Success rate: ");
-        Serial.println(index/10000.0, 6); 
+        Serial.println(index/2500.0, 6); 
         index = 0;
         done = true;
       }
